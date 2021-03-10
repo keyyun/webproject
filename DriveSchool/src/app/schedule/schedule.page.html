@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title color="dark">Schedule for admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div>
+    <br>
+     <ion-item>
+      <ion-label position="floating">Student Name</ion-label>
+      <ion-input type="text" [(ngModel)]="schedule.name" required></ion-input>
+    </ion-item> 
+
+<ion-item>
+    <ion-label>Day</ion-label>
+       <ion-select value="General" [(ngModel)]="schedule.day" okText="save"  cancelText="cancel">
+      <ion-select-option value="Monday">Monday</ion-select-option>
+      <ion-select-option value="Tuesday">Tuesday</ion-select-option>
+      <ion-select-option value="Wednesday">Wednesday</ion-select-option>
+      <ion-select-option value="Thursday">Thursday</ion-select-option>
+      <ion-select-option value="Friday">Friday</ion-select-option>
+     </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Subject</ion-label> 
+     <ion-input [(ngModel)]="schedule.subject" type="text"  ></ion-input>
+   </ion-item>
+    
+     <ion-item>
+   <ion-label position="floating">Venue</ion-label> 
+    <ion-input [(ngModel)]="schedule.venue" type="text" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <ion-label position="floating">Conduct By</ion-label> 
+    <ion-input [(ngModel)]="schedule.by" type="text" ></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-input [(ngModel)]="schedule.start" type="text" placeholder="Start" required></ion-input>
+  </ion-item>
+
+
+   
+  <ion-item>
+    <ion-input [(ngModel)]="schedule.end" type="text" placeholder="End" required></ion-input>
+  </ion-item>
+<br>
+   <ion-button expand="block" color="primary" (click)="createSchedule(schedule)">
+      <ion-icon slot="start" name="submit"></ion-icon>
+      Submit
+    </ion-button>
+
+<ion-footer>
+  <ion-toolbar >
+
+    <ion-item>
+    <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/index-admin">
+     <ion-icon name="home-outline"></ion-icon>
+      <ion-label>HOME</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule" routerLink="/schedule">
+      <ion-icon name="time-outline"></ion-icon>
+      <ion-label>SCHEDULE</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="account" routerLink="/account">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>ACCOUNT</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
+</ion-item>  
+</ion-toolbar>
+</ion-footer>
+   </div>
+</ion-content>

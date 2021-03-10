@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title color="dark">Account for student</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list lines="none">
+    <ion-item-sliding *ngFor="let post of posts">
+    <ion-item class="no-padding">
+       <ion-label>
+          <h2>Name :{{post.name}}</h2>
+          <h2>IC Number :{{post.ic }}</h2>
+          <h2>Email :{{post.email }}</h2>
+          <h2>Password :{{post.password }}</h2>
+          <h2>Enquire :{{post.enquiry }}</h2>
+          <h2>______________________</h2>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item-options side="start">
+      <ion-item-option color="primary" [routerLink]="['/edit-post', post.id]">
+        <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+  </ion-item-sliding>
+</ion-list>
+
+<ion-item>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/index">
+     <ion-icon name="home-outline"></ion-icon>
+      <ion-label>HOME</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule" routerLink="/schedulestudent">
+      <ion-icon name="time-outline"></ion-icon>
+      <ion-label>SCHEDULE</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="account" routerLink="/accountstudent">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>ACCOUNT</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
+</ion-item>
+</ion-content>

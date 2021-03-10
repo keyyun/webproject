@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" color="dark">Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <div class="ion-padding">
+
+    <ion-text color="dark">
+      <p>Please fill up enquiry and we will be in touch with you soon</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="post.name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">IC Number</ion-label>
+      <ion-input [(ngModel)]="post.ic"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" placeholder="your@gmail.com" [(ngModel)]="post.email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="post.password" required></ion-input>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label>License Type</ion-label>
+      <ion-select value="General" okText="Okay" [(ngModel)]="post.enquiry" cancelText="Dismiss">
+        <ion-select-option value="B2 - Motorcycle">B2 - Motorcycle</ion-select-option>
+        <ion-select-option value="B - Motorcycle 500cc">B - Motorcycle 500cc</ion-select-option>
+        <ion-select-option value="D - Car (Manual)">D - Car (Manual)</ion-select-option>
+        <ion-select-option value="DA - Car (Automatic)">DA - Car (Automatic)</ion-select-option>
+        <ion-select-option value="E(Lorry)">E - Lorry</ion-select-option></ion-select>
+    </ion-item>   
+
+
+    <ion-button expand="block" color="primary" (click)="createPost(post)">
+      <ion-icon slot="start" name="send"></ion-icon>
+      Send
+    </ion-button>
+   </div>
+</ion-content>
